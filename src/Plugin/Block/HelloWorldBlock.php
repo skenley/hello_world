@@ -31,19 +31,20 @@ class HelloWorldBlock extends BlockBase {
     
     // Filter Hello World Articles with Sections tags.
     if (!empty($nodes)) { // Check that we have articles to look at
+      
       $content = '<ul>';
       foreach ($nodes as $node) {
-        $title = $node->getTitle();
-        $nid = $node->id();
-        $options = array(
-          'attributes' => ['class' => ['node-link']],
-          'absolute' => TRUE,
-        );
-        $link_info = Url::fromUri('internal:/node/' . $nid, $options);
-        $link = Link::fromTextAndUrl($title, $link_info)->toString();
         $section = $node->get('field_sections')->getValue();
-        // Add node to list if it has been tagged with Sections vocab
+        // If the node is tagged with Sections vocab, build list item
         if (!empty($section)) {
+          $title = $node->getTitle();
+          $nid = $node->id();
+          $options = array(
+            'attributes' => ['class' => ['node-link']],
+            'absolute' => TRUE,
+          );
+          $link_info = Url::fromUri('internal:/node/' . $nid, $options);
+          $link = Link::fromTextAndUrl($title, $link_info)->toString();
           $content .= '<li>' . $link . '</li>';
         }
       }
