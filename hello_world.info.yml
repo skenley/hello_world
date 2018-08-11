@@ -6,3 +6,5 @@ description: Creates a block listing Hello World Articles
 package: Custom
 type: module
 core: 8.x
+dependencies:
+  - content_type_vocab_hello_world
