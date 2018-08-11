@@ -1,0 +1,29 @@
+uuid: 0efefbaa-9df4-49ea-aec3-697c34aafd33
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello_world
+    - node
+  theme:
+    - bartik
+id: helloworldblock
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: hello_world_article_block
+settings:
+  id: hello_world_article_block
+  label: 'Hello World Block'
+  provider: hello_world
+  label_display: visible
+  hello_world_block_settings: null
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      hello_world_article: hello_world_article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

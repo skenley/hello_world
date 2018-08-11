@@ -15,6 +15,7 @@ use Drupal\Core\Url;
  * @Block(
  *    id = "hello_world_article_block",
  *    admin_label = @Translation("Hello World Block"),
+ *    category = @Translation("Custom"),
  * )
  */
 
