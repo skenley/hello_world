@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme
+ */
+
+function hello_world_theme() {
+  // Tell drupal to use my custom template
+  return [
+    'node__hello_world_article' => [
+      'template' => 'node--hello-world-article',
+      'base hook' => 'node',
+    ],
+  ];
+}

@@ -1,0 +1,8 @@
+name: Hello World
+description: Creates a block listing Hello World Articles 
+             That has been tagged with a Sections taxonomy term,
+             and provides a custom node template for the 
+             Hello World Article content type.
+package: Custom
+type: module
+core: 8.x
